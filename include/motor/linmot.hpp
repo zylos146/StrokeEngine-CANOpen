@@ -111,6 +111,13 @@ class LinmotMotor: public MotorInterface {
     int16_t CO_motorVoltageWord; // UPID 0xE96D - SInt16 - 0.01 V Scale
     int16_t CO_powerLossWord; // UPID 0xEADB - SInt16 - 0.1 W Scale
 
+    float stat_modelTemp;
+    float stat_realTemp;
+
+    uint16_t positionScale = 1000;
+    uint16_t speedScale = 1000;
+    uint16_t accelerationScale = 10000;
+
     uint8_t CO_cmdCount = 0;
     uint16_t position = 0;
     bool hasInitialized = false;
